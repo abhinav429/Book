@@ -26,7 +26,7 @@ export const connectToDatabase = async () => {
         cached.promise = null;
         const msg = e instanceof Error ? e.message : String(e);
         if (msg.includes('MongooseServerSelectionError') || msg.includes('Could not connect')) {
-            console.error('MongoDB Atlas connection failed. Add your current IP to the Atlas IP Access List: https://cloud.mongodb.com → Project → Network Access → Add IP Address.', e);
+            console.error('MongoDB Atlas: add this machine\'s IP in Network Access. https://cloud.mongodb.com → Network Access → Add IP Address.', e);
         } else {
             console.error('MongoDB connection error. ' + e);
         }

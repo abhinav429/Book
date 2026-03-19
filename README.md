@@ -66,7 +66,7 @@ AI-powered platform for having real-time voice conversations with your books. Up
    ELEVENLABS_API_KEY=
    ```
 
-   Replace placeholders with your own keys from [Clerk](https://clerk.com), [Vercel](https://vercel.com), [MongoDB](https://www.mongodb.com), [Vapi](https://vapi.ai), [Google AI Studio](https://aistudio.google.com), and [ElevenLabs](https://elevenlabs.io).
+   Add your keys from [Clerk](https://clerk.com), [Vercel](https://vercel.com), [MongoDB](https://www.mongodb.com), [Vapi](https://vapi.ai), [Google AI Studio](https://aistudio.google.com), and [ElevenLabs](https://elevenlabs.io).
 
 3. **Run the app**
 
@@ -83,20 +83,6 @@ AI-powered platform for having real-time voice conversations with your books. Up
 - `lib/` – Utilities, constants, actions, and server logic
 - `database/` – Mongoose models and connection
 - `public/` – Static assets
-
-## Making this your own repo
-
-If you cloned from another repository and want to publish this as your own project:
-
-```bash
-rm -rf .git
-git init
-git add .
-git commit -m "Initial commit"
-git branch -m main
-git remote add origin <your-github-repo-url>
-git push -u origin main
-```
 
 ## License
 

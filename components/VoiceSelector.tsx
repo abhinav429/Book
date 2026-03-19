@@ -16,7 +16,6 @@ const VoiceSelector = ({ value, onChange, disabled, className }: VoiceSelectorPr
                 disabled={disabled}
                 className="space-y-8"
             >
-                {/* Male Voices */}
                 <div className="space-y-4">
                     <h4 className="text-sm font-medium text-[#777]">Male Voices</h4>
                     <div className="voice-selector-options">
@@ -53,7 +52,6 @@ const VoiceSelector = ({ value, onChange, disabled, className }: VoiceSelectorPr
                     </div>
                 </div>
 
-                {/* Female Voices */}
                 <div className="space-y-4">
                     <h4 className="text-sm font-medium text-[#777]">Female Voices</h4>
                     <div className="voice-selector-options">

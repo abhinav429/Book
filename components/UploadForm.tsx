@@ -151,7 +151,6 @@ const UploadForm = () => {
             <div className="new-book-wrapper">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                        {/* 1. PDF File Upload */}
                         <FileUploader
                             control={form.control}
                             name="pdfFile"
@@ -163,7 +162,6 @@ const UploadForm = () => {
                             disabled={isSubmitting}
                         />
 
-                        {/* 2. Cover Image Upload */}
                         <FileUploader
                             control={form.control}
                             name="coverImage"
@@ -175,7 +173,6 @@ const UploadForm = () => {
                             disabled={isSubmitting}
                         />
 
-                        {/* 3. Title Input */}
                         <FormField
                             control={form.control}
                             name="title"
@@ -195,7 +192,6 @@ const UploadForm = () => {
                             )}
                         />
 
-                        {/* 4. Author Input */}
                         <FormField
                             control={form.control}
                             name="author"
@@ -215,13 +211,12 @@ const UploadForm = () => {
                             )}
                         />
 
-                        {/* 5. Voice Selector */}
                         <FormField
                             control={form.control}
                             name="persona"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="form-label">Choose Assistant Voice</FormLabel>
+                                    <FormLabel className="form-label">Voice</FormLabel>
                                     <FormControl>
                                         <VoiceSelector
                                             value={field.value}
@@ -234,7 +229,6 @@ const UploadForm = () => {
                             )}
                         />
 
-                        {/* 6. Submit Button */}
                         <Button type="submit" className="form-btn" disabled={isSubmitting}>
                             Begin Synthesis
                         </Button>

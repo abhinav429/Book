@@ -59,7 +59,6 @@ const Transcript = ({ messages, currentMessage, currentUserMessage }: Transcript
         </div>
       ))}
 
-      {/* User Streaming Message */}
       {currentUserMessage && (
         <div className="transcript-message transcript-message-user">
           <div className="transcript-bubble transcript-bubble-user">
@@ -69,7 +68,6 @@ const Transcript = ({ messages, currentMessage, currentUserMessage }: Transcript
         </div>
       )}
 
-      {/* Assistant Streaming Message */}
       {currentMessage && (
         <div className="transcript-message transcript-message-assistant">
           <div className="transcript-bubble transcript-bubble-assistant">
