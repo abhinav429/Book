@@ -20,14 +20,6 @@ export default async function BookDetailsPage({
           <h1 className="text-3xl font-serif font-bold text-[#212a3b]">
             Please Sign it to view your books.
           </h1>
-          <div className="mt-6">
-            <Link
-              href="/sign-in"
-              className="btn-primary inline-flex items-center justify-center"
-            >
-              Sign in
-            </Link>
-          </div>
         </div>
       </main>
     );
