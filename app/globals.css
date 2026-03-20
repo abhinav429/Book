@@ -715,6 +715,13 @@
       @apply text-red-600;
     }
   }
+  .upload-dropzone-check {
+    @apply flex items-center justify-center w-6 h-6 text-emerald-600 transition-colors cursor-pointer;
+
+    &:hover {
+      @apply text-emerald-700;
+    }
+  }
   .form-label {
     @apply text-lg font-medium text-black mb-2 block;
   }

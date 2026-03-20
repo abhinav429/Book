@@ -2,7 +2,7 @@
 
 import React, { useCallback, useRef } from 'react';
 import { useController, FieldValues } from 'react-hook-form';
-import { X } from 'lucide-react';
+import { CheckCircle2, X } from 'lucide-react';
 import { FileUploadFieldProps } from '@/types';
 import { cn } from '@/lib/utils';
 import { FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
@@ -19,6 +19,7 @@ const FileUploader = <T extends FieldValues>({
 }: FileUploadFieldProps<T>) => {
     const {
         field: { onChange, value },
+        fieldState: { error },
     } = useController({ name, control });
 
     const inputRef = useRef<HTMLInputElement>(null);
@@ -45,6 +46,7 @@ const FileUploader = <T extends FieldValues>({
     );
 
     const isUploaded = !!value;
+    const hasError = !!error;
 
     return (
         <FormItem className="w-full">
@@ -72,9 +74,17 @@ const FileUploader = <T extends FieldValues>({
                             <button
                                 type="button"
                                 onClick={onRemove}
-                                className="upload-dropzone-remove mt-2"
+                                className={cn(
+                                    'mt-2',
+                                    hasError ? 'upload-dropzone-remove' : 'upload-dropzone-check'
+                                )}
+                                title={hasError ? 'Remove file' : 'Uploaded (click to remove)'}
                             >
-                                <X className="w-5 h-5" />
+                                {hasError ? (
+                                    <X className="w-5 h-5" />
+                                ) : (
+                                    <CheckCircle2 className="w-5 h-5" />
+                                )}
                             </button>
                         </div>
                     ) : (

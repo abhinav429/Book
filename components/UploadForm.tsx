@@ -46,6 +46,7 @@ const UploadForm = () => {
            return toast.error("Please login to upload books");
         }
 
+        form.clearErrors('pdfFile');
         setIsSubmitting(true);
 
         // Optional: analytics
@@ -66,6 +67,10 @@ const UploadForm = () => {
             const parsedPDF = await parsePDFFile(pdfFile);
 
             if(parsedPDF.content.length === 0) {
+                form.setError('pdfFile', {
+                    type: 'manual',
+                    message: 'Unable to read this PDF. Please try a different file.',
+                });
                 toast.error("Failed to parse PDF. Please try again with a different file.");
                 return;
             }
@@ -136,6 +141,10 @@ const UploadForm = () => {
         } catch (error) {
             console.error(error);
 
+            form.setError('pdfFile', {
+                type: 'manual',
+                message: 'Upload failed. Please try again.',
+            });
             toast.error("Failed to upload book. Please try again later.");
         } finally {
             setIsSubmitting(false);
